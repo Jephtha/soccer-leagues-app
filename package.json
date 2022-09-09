@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "assert": "^2.0.0",
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "mongodb": "^4.4.1",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "mocha": "^9.2.2"
+  },
+  "scripts": {
+      "test": "mocha"
+    }
+}

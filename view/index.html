@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxoKNv31CfvNKyfI5_Fo0XWH6MpPiDFcg&callback=initMap">
+    </script>
+    <script src="main.js"></script>
+    <title>Soccer league App</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <div class="objective">
+            <div class="left">
+              <img src="./assets/us_soccer_fed_logo.png"
+                  alt="logo"/>
+              <h1>USA SOCCER LEAGUES</h1>
+              <p>
+                This page has everything you need to get started. Any information you
+                need regarding the USA Soccer League, you'll find it on this page.
+              </p>
+            </div>
+
+            <div class="right">
+                <img src="./assets/illustration.png" alt="illustration" />
+                <div class="main">
+                    <div class="mainHeader">USA SOCCER LEAGUES</div>
+          
+                    <form>
+                        <div class="options">
+                        <label for="leagues">Choose a league: </label>
+                        <select name="leagues" id="leagues" v-model="league">
+                            <option value="mls">MLS (Major League Soccer)</option>
+                            <option value="nwsl">NWSL (National Women's Soccer League)</option>
+                            <option value="usl">USL Championship</option>
+                        </select>
+                        </div>
+                        <br/>
+          
+                    </form>
+                </div>
+            </div>
+
+            <div class="dataContainer">
+                <table>
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td>Team</td>
+                            <td>City</td>
+                            <td>State</td>
+                            <td>Stadium</td>
+                            <td>Stadium capacity</td>
+                            <td>Joined in</td>
+                            <td>Head coach</td>
+                            <td>Wikipedia</td>
+                        </tr>
+                    </thead>
+                  
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
+            </div>
+            <br>
+        </div>
+
+        <div id="map"></div>
+            
+        <div class="div-container">
+                <br>
+                <p> To get more information on each team and get a list of current players in the team, select the preferred team from the drop down list below:</p>
+                <p> Below is a list of current players for the team</p>
+                <select id="teamDropDown"></select><br>
+                <p id="info">You can find out more information at the team's offical website: </p>
+        </div>
+
+        <div id="players" class="container">
+        </div> 
+
+        <div class="div-container">
+            <br>
+            <p>Search a Player's Name to find the Player's Stats</p>
+            <p>Note: This search box is case sensitive</p>
+        </div>
+    
+        <div class = "stats">
+            <!-- <form action="/main.js">
+                <input type="text" placeholder="Player Name" name="search">
+                <button type="submit">Submit</button>
+            </form> -->
+            <form role="search" id="form">
+                <input type="search" id="query"
+                 placeholder="Search Player Name"
+                 aria-label="Search through site content">
+                <button id="submit" type="submit">
+                  <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
+                </button>
+              </form><br>
+
+        </div>
+
+
+
+        <div>
+                <br>
+                <p> The Table Standings for MLS teams can be found below:</p>
+        </div>
+
+            <br>
+        <div class="dataContainer2">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Rank</td>
+                            <td>Team</td>
+                            <td>Games Played</td>
+                            <td>Wins</td>
+                            <td>Losses</td>
+                            <td>Goals Scored</td>
+                            <td>Goals Conceded</td>
+                            <td>Goal Difference</td>
+                            <td>Points</td>
+                        </tr>
+                    </thead>
+                  
+                    <tbody id="tbody2">
+
+                    </tbody>
+                </table>
+        </div>
+              
+        <!-- </div> -->
+    </div>
+</body>
+
+</HTML>

@@ -1,0 +1,19 @@
+to populate database for our program:
+install mongoimport
+navigate to director of our api (...\soccer-leagues-app)
+
+run the following commands:
+
+
+mongoimport --db mydb --collection mls --type csv --headerline --file "mls.csv"
+
+mongoimport --db mydb --collection nwsl --type csv --headerline --file "nwsl.csv"
+
+mongoimport --db mydb --collection usl --type csv --headerline --file "usl.csv"
+
+mongoimport --db mydb --collection players --type csv --headerline --ignoreBlanks --file "all_players.csv"
+
+mongoimport --db mydb --collection tables --type csv --headerline --file "all_tables.csv"
+
+
+after running the following, the database will be populated with all the required information and we would have 5 collections to work with.
